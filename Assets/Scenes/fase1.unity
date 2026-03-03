@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 311839381}
   m_Layer: 0
   m_Name: Wall_bottom
-  m_TagString: Untagged
+  m_TagString: ParedeBaixo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e45caeb87d17acf4eb43d966b566bd36, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 449298731}
   m_Layer: 0
   m_Name: Wall_right
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e45caeb87d17acf4eb43d966b566bd36, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -425,7 +425,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550925235}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -433,7 +433,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e45caeb87d17acf4eb43d966b566bd36, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -454,7 +454,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e45caeb87d17acf4eb43d966b566bd36, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 1374102560}
   m_Layer: 0
   m_Name: Wall_left
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,7 +1007,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e45caeb87d17acf4eb43d966b566bd36, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1089,6 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ballPrefab: {fileID: 550925235}
   ballSpawnPoint: {fileID: 776570846}
+  vidas: 3
 --- !u!4 &1400592227
 Transform:
   m_ObjectHideFlags: 0
@@ -1116,7 +1117,7 @@ GameObject:
   - component: {fileID: 2010943285}
   m_Layer: 0
   m_Name: Wall_top
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1131,7 +1132,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e45caeb87d17acf4eb43d966b566bd36, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1193,6 +1194,10 @@ PrefabInstance:
     - target: {fileID: 932013029107085497, guid: e7114aef97656584b91de353e2adbeb1, type: 3}
       propertyPath: m_Name
       value: Bloco amarelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 932013029107085497, guid: e7114aef97656584b91de353e2adbeb1, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 4060966747002351689, guid: e7114aef97656584b91de353e2adbeb1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1261,7 +1266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6681643437325104640, guid: a1e9e35da03baf54ea8cb6bbb97846d4, type: 3}
       propertyPath: m_TagString
-      value: BlocoCinza
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817804472617471267, guid: a1e9e35da03baf54ea8cb6bbb97846d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7678592154117857118, guid: a1e9e35da03baf54ea8cb6bbb97846d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1383,6 +1392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bloco azul
       objectReference: {fileID: 0}
+    - target: {fileID: 967726065963135494, guid: 866d3fa8affff4e428d474e1eaceff0e, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 6849121483594182678, guid: 866d3fa8affff4e428d474e1eaceff0e, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -1443,6 +1456,10 @@ PrefabInstance:
     - target: {fileID: 2374892156547665641, guid: 72e5478bb988f1543818a9b0b2c33c59, type: 3}
       propertyPath: m_Name
       value: Bloco verde
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374892156547665641, guid: 72e5478bb988f1543818a9b0b2c33c59, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 5504005207761714480, guid: 72e5478bb988f1543818a9b0b2c33c59, type: 3}
       propertyPath: m_SortingOrder
@@ -1508,6 +1525,10 @@ PrefabInstance:
     - target: {fileID: 4047666386362805543, guid: fd9f8bdb02df87a44b70936d968336ff, type: 3}
       propertyPath: m_Name
       value: Bloco roxo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047666386362805543, guid: fd9f8bdb02df87a44b70936d968336ff, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 7038735230943451188, guid: fd9f8bdb02df87a44b70936d968336ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1609,6 +1630,10 @@ PrefabInstance:
     - target: {fileID: 9193665111843064401, guid: 4d80cf2a23a47de4bbe3697ad138a5e5, type: 3}
       propertyPath: m_Name
       value: Bloco vermelho
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193665111843064401, guid: 4d80cf2a23a47de4bbe3697ad138a5e5, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
