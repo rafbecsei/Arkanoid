@@ -15,13 +15,34 @@ public class BallController : MonoBehaviour
     {
         if(coll.collider.CompareTag("Block"))
         {
+            FindFirstObjectByType<GameManager>().BlocoDestruido();
             Destroy(coll.gameObject);
         }
+    }
 
-        else if(coll.collider.CompareTag("ParedeBaixo"))
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.CompareTag("ParedeBaixo"))
         {
-            FindObjectOfType<GameManager>().PerdeVida();
-            Destroy(gameObject);
+            Debug.Log("Bola caiu!");
+            FindFirstObjectByType<GameManager>().PerdeVida();
+            // Destroy(gameObject);
+        }
+    }
+
+    void Update()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        if (Mathf.Abs(rb.linearVelocity.x) < 1f)
+        {
+            float direction = rb.linearVelocity.x >= 0 ? 1 : -1;
+            rb.linearVelocity = new Vector2(direction * 2f, rb.linearVelocity.y);
+        }
+        else if (Mathf.Abs(rb.linearVelocity.y) < 1f)
+        {
+            float direction = rb.linearVelocity.y >= 0 ? 1 : -1;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, direction * 2f);
         }
     }
 }

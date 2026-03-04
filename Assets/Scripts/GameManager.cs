@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject ballPrefab;
     public Transform ballSpawnPoint;
     public int vidas = 3;
+    public int blocos;
 
     private GameObject currentBall;
 
@@ -13,15 +15,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SpawnBall();
+
+        blocos = GameObject.FindGameObjectsWithTag("Block").Length;
     }
 
     void SpawnBall()
     {
-
         currentBall = Instantiate(ballPrefab, ballSpawnPoint.position, Quaternion.identity);
 
         Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(Random.Range(-2f, 2f), 8f);
+        rb.linearVelocity = new Vector2(Random.Range(-4f, 4f), 8f);
     }
 
     public void PerdeVida()
@@ -39,7 +42,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
+
+    public void BlocoDestruido()
+    {
+        blocos--;
+
+        if(blocos <= 0)
+        {
+            Debug.Log("Você venceu!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
