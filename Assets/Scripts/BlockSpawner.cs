@@ -14,7 +14,7 @@ public class BlockSpawner : MonoBehaviour
     {
         int fase = SceneManager.GetActiveScene().buildIndex;
 
-        if(fase == 1)
+        if(fase == 2)
         {
             // Fase1: layout padrão 6x10
             int linhas = 6;
@@ -34,7 +34,7 @@ public class BlockSpawner : MonoBehaviour
                 }
             }
         }
-        else if(fase == 2)
+        else if(fase == 3)
         {
             // Fase2: escada da direita para a esquerda
             int colunasEscada = 10; // número de colunas

@@ -14,7 +14,7 @@ public class InicioController : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("fase1");
+            SceneManager.LoadScene("Introdução");
         }
     }
 }

@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -68,8 +68,8 @@ public class GameManager : MonoBehaviour
 
         if(blocos <= 0)
         {
-            Debug.Log("Você venceu!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // SceneManager.LoadScene("fase2");
         }
     }
 

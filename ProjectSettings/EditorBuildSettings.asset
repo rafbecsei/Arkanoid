@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Inicio.unity
     guid: 2d9eeb07a26b00441a02dce2ada0c110
   - enabled: 1
+    path: "Assets/Scenes/Introdu\xE7\xE3o.unity"
+    guid: a24c03f0b197e164ea0319284a57ac77
+  - enabled: 1
     path: Assets/Scenes/fase1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/fase2.unity
-    guid: 7df1948d14a2ea24e8de408c3c1a865c
+    guid: f7a7ba78e694395429cc2ceac9520f99
+  - enabled: 1
+    path: Assets/Scenes/Fim.unity
+    guid: e9573ab680dd96045adc67593121cc76
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: fafcf052437deea4a868ce1c7befc966
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
